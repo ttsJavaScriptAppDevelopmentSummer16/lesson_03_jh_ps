@@ -6,6 +6,7 @@ function gethand(){
     return hands[parseInt(Math.random()*10%3)];
 }
 
+
 console.log("Testing Math Random =  " + gethand());
 
 //Define two objects for two players. Each player has name and getHand() properties.
@@ -49,4 +50,3 @@ var player2score = 0;
       player2score = player2score +1;
       console.log( player2.name + " wins");
   }
- 
