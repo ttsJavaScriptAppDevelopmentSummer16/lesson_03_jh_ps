@@ -33,7 +33,7 @@ var player1score = 0;
 var player2score = 0;
 
 //looping for cumulative scores
-while ((player1score < 5) || (player2score < 5)) {
+// while ((player1score < 5) || (player2score < 5)) {
 
 //Gets hands from each and Determines the winner
 // playRound();
@@ -48,15 +48,15 @@ while ((player1score < 5) || (player2score < 5)) {
     )
     {
       player1score = player1score + 1;
-      console.log( player1.name + " wins");
+      console.log( player1.name + " WINS ");
 
     } else
     { // player2 wins
       player2score = player2score + 1;
-      console.log( player2.name + " wins");
+      console.log( player2.name + " WINS ");
     }
 
 console.log( player1.name + " has won " +  player1score  + " games.");
 console.log( player2.name + " has won " +  player2score  + " games.");
 
-}
+// }
