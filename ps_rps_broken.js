@@ -1,16 +1,20 @@
+var weapons = ['rock', 'paper', 'scissors'];
+
+function getHand(){
+  return weapons[parseInt(Math.random()*10)%3];
+}
+
 var player1 = {
     name: "Judy",
     hand: function(){
-      var weapons = ['rock', 'paper', 'scissors'];
-      return weapons[parseInt(Math.random()*10)%3];
+      getHand();
   }
 };
 
 var player2 = {
     name: "Priyam",
     hand: function(){
-      var weapons = ['rock', 'paper', 'scissors'];
-      return weapons[parseInt(Math.random()*10)%3];
+      getHand();
     }
 };
 
