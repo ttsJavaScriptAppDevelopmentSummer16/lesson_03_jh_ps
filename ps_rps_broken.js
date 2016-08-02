@@ -1,26 +1,26 @@
 var weapons = ['rock', 'paper', 'scissors'];
 
-function getHand(){
-  return weapons[parseInt(Math.random()*10)%3];
-}
+// function getHand(weapon){
+//   return weapon[parseInt(Math.random()*weapon.length)%weapon.length];
+// }
 
-var player1 = {
+var participant1 = {
     name: "Judy",
-    hand: function(){
-      getHand();
-  }
+    hand: function getHand(weapon){
+      return weapon[parseInt(Math.random()*weapon.length)%weapon.length];
+    }
 };
 
-var player2 = {
+var participant2 = {
     name: "Priyam",
-    hand: function(){
-      getHand();
+    hand: function getHand(weapon){
+      return weapon[parseInt(Math.random()*weapon.length)%weapon.length];
     }
 };
 
 function playAround(participant1, participant2){
-  var handParticipant1 = participant1.hand();
-  var handParticipant2 = participant2.hand();
+  let handParticipant1 = participant1.hand(weapons);
+  let handParticipant2 = participant2.hand(weapons);
 
   if (handParticipant1 === handParticipant2){
     console.log('\n' + 'It\'s a Tie!');
@@ -45,10 +45,10 @@ function playAround(participant1, participant2){
 // console.log(playAround(player1,player2));
 
 function playGame(participant1,participant2,playUntil){
-  var scoreParticipant1 = 0;
-  var scoreParticipant2 = 0;
+  let scoreParticipant1 = 0;
+  let scoreParticipant2 = 0;
   while (scoreParticipant1 < playUntil && scoreParticipant2 < playUntil){
-    winner = playAround(participant1,participant2);
+    let winner = playAround(participant1,participant2);
     console.log(winner)
     if (winner === participant1){
       scoreParticipant1 += 1;
@@ -68,4 +68,4 @@ function playGame(participant1,participant2,playUntil){
   }
 }
 
-console.log(playGame(player1,player2,5));
+console.log(playGame(participant1,participant2,5));
