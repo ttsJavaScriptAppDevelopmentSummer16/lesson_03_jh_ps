@@ -4,15 +4,29 @@ var weapons = ['rock', 'paper', 'scissors'];
 //   return weapon[parseInt(Math.random()*weapon.length)%weapon.length];
 // }
 
-var participant1 = {
+var player1 = {
     name: "Judy",
     hand: function getHand(weapon){
       return weapon[parseInt(Math.random()*weapon.length)%weapon.length];
     }
 };
 
-var participant2 = {
+var player2 = {
     name: "Priyam",
+    hand: function getHand(weapon){
+      return weapon[parseInt(Math.random()*weapon.length)%weapon.length];
+    }
+};
+
+var player3 = {
+    name: "John",
+    hand: function getHand(weapon){
+      return weapon[parseInt(Math.random()*weapon.length)%weapon.length];
+    }
+};
+
+var player4 = {
+    name: "Bill",
     hand: function getHand(weapon){
       return weapon[parseInt(Math.random()*weapon.length)%weapon.length];
     }
@@ -48,7 +62,7 @@ function playGame(participant1,participant2,playUntil){
   let scoreParticipant1 = 0;
   let scoreParticipant2 = 0;
   while (scoreParticipant1 < playUntil && scoreParticipant2 < playUntil){
-    let winner = playAround(participant1,participant2);
+    let winner = playAround(player1,player2);
     console.log(winner)
     if (winner === participant1){
       scoreParticipant1 += 1;
@@ -68,4 +82,13 @@ function playGame(participant1,participant2,playUntil){
   }
 }
 
-console.log(playGame(participant1,participant2,5));
+console.log(playGame(player1,player2,5));
+
+function playTournament(participant1, participant2, participant3, participant4, playUntil){
+  let winner1Round1 = playGame(participant1,participant2, playUntil);
+  let winner2Round1 = playGame(participant1,participant2, playUntil);
+  let overallWinner = playGame(winner1Round1,winner2Round1, playUntil);
+  console.log(overallWinner.name + " is the world champion");
+}
+
+playTournament(player1,player2,player3,player4,5)

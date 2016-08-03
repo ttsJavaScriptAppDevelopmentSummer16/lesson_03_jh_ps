@@ -14,6 +14,22 @@ var player2 = {
     }
 };
 
+var player3 = {
+    name: "Elliott",
+    hand: function(){
+      let weapons = ['rock', 'paper', 'scissors'];
+      return weapons[parseInt(Math.random()*weapons.length)%weapons.length];
+    }
+};
+
+var player4 = {
+    name: "DJango",
+    hand: function(){
+      let weapons = ['rock', 'paper', 'scissors'];
+      return weapons[parseInt(Math.random()*weapons.length)%weapons.length];
+    }
+};
+
 function playAround(participant1, participant2){
   let handParticipant1 = participant1.hand();
   let handParticipant2 = participant2.hand();
@@ -64,4 +80,13 @@ function playGame(participant1,participant2,playUntil){
   }
 }
 
-console.log(playGame(player1,player2,5));
+//console.log(playGame(player1,player2,5));
+
+function playTournament(participant1, participant2, participant3, participant4, playUntil){
+  let winner1Round1 = playGame(participant1,participant2, playUntil);
+  let winner2Round1 = playGame(participant1,participant2, playUntil);
+  let overallWinner = playGame(winner1Round1,winner2Round1, playUntil);
+  console.log(overallWinner.name + " is the world champion");
+}
+
+playTournament(player1,player2,player3,player4,5)
